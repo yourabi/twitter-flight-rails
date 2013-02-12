@@ -39,7 +39,7 @@ Currently this version tracks flight master [commit e07b90c78d](https://github.c
 
 Flight uses [ES5-shim](https://github.com/kriskowal/es5-shim) to polyfill ES5 support for older browsers and [JQuery](http://jquery.com) for DOM manipulation API. 
 
-Note: as of version 0.0.2 these are intentionally not listed as deps in the gemspec.
+Note: as of version 0.0.2 the es5-shim dependency is not handled.
 
 ## Contributing
 
