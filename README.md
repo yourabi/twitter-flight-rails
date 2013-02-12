@@ -23,11 +23,23 @@ Or install it yourself as:
 
 ## Usage
 
-To start using the twitter flight fraemwork in your rails app enable it via the asset pipeline 
+To start using the twitter flight fraemwork in your rails app enable it via the asset pipeline (app/assets/javascripts/application.js).
 
-edit app/assets/javascripts/application.js and include
+Add the folllwing:
 
-//= require twitter/flight                                                                                                                                                                                                                              
+```js
+
+//= require twitter/flight                                                                                                                                                                                                                             
+
+```
+
+Currently this version tracks flight master [commit e07b90c78d](https://github.com/twitter/flight/commit/e07b90c78d416549455354cbcd3e7f8a001c4fdf) and may support release tags in the future.
+
+## Dependencies
+
+Flight uses [ES5-shim](https://github.com/kriskowal/es5-shim) to polyfill ES5 support for older browsers and [JQuery](http://jquery.com) for DOM manipulation API. 
+
+Note: as of version 0.0.2 these are intentionally not listed as deps in the gemspec.
 
 ## Contributing
 
