@@ -10,7 +10,7 @@ define(
 
   [
     './utils',
-    '../tools/debug/debug'
+    'twitter/flight/tools/debug/debug'
   ],
 
   function(util, debug) {

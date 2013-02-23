@@ -1,1 +1,1 @@
-//= require_directory twitter/flight
+//=require_directory ./flight

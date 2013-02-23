@@ -1,6 +1,6 @@
 # Twitter Flight framework for Rails
 
-This asset gem packages the [twitter flight](https://github.com/twitter/flight/) framework for the Rails asset pipeline.
+This asset gem packages the [twitter flight](https://github.com/twitter/flight/) framework for Rails.
 
 ## Installation
 
@@ -12,6 +12,11 @@ Add this line to your application's Gemfile:
 
     gem 'twitter-flight-rails', :git => "git@github.com:yourabi/twitter-flight-rails.git"
     
+You'll also want to add the following dependencies to your Gemfile (see the dependencies section for more details)
+
+    gem 'requirejs-rails'
+
+    gem 'es5-shim-rails'
 
 And then execute:
 
@@ -21,25 +26,35 @@ Or install it yourself as:
 
     $ gem install twitter-flight-rails
 
+## Dependencies
+
+Twitter flight depdends on ES5-shim, jQuery and an AMD implementation like require.js.
+
+One possible Rails/Require.js integration is [requirejs-rails](https://github.com/jwhitley/requirejs-rails) ... you'll probably want to read their documentation and follow their initial setup instructions.
+
+[ES5-shim](https://github.com/kriskowal/es5-shim) is used to polyfill ES5 support for older browsers and [JQuery](http://jquery.com) for DOM manipulation API. 
+
 ## Usage
 
-To start using the twitter flight fraemwork in your rails app enable it via the asset pipeline (app/assets/javascripts/application.js).
-
-Add the folllwing:
+Eventually you'll end up using require.js to include jquery, es5-shim, flight and your own compnents using something like this
 
 ```js
+  // here "root" is a file that contains your own components under app/assets/javascripts/root.js and accessed at /assets/root.js
+  require(['jquery', 'es5-shim/shims/es5-shim', 'es5-shim/shims/es5-sham', 'twitter/flight/', 'root'], function($) {
 
-//= require twitter/flight                                                                                                                                                                                                                             
+    // this is your own boot.js file in app/assets/javascripts/boot.js accessed at /assets/boot.js
+    require(['boot'], function(initialize) {
+      initialize();
+    });
+
+  });
 
 ```
 
-Currently this version tracks flight master [commit e07b90c78d](https://github.com/twitter/flight/commit/e07b90c78d416549455354cbcd3e7f8a001c4fdf) and may support release tags in the future.
+## Changelog
 
-## Dependencies
+Currently this version tracks [flight v1.0.2](https://github.com/twitter/flight/tree/v1.0.2) with a few bugs backported from master ($.browser reference in jQuery 1.9) and paths tweaked slightly.
 
-Flight uses [ES5-shim](https://github.com/kriskowal/es5-shim) to polyfill ES5 support for older browsers and [JQuery](http://jquery.com) for DOM manipulation API. 
-
-Note: as of version 0.0.2 the es5-shim dependency is not handled.
 
 ## Contributing
 
