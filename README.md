@@ -22,17 +22,13 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install twitter-flight-rails
-
 ## Dependencies
 
 Twitter flight depdends on ES5-shim, jQuery and an AMD implementation like require.js.
 
 One possible Rails/Require.js integration is [requirejs-rails](https://github.com/jwhitley/requirejs-rails) ... you'll probably want to read their documentation and follow their initial setup instructions.
 
-[ES5-shim](https://github.com/kriskowal/es5-shim) is used to polyfill ES5 support for older browsers and [JQuery](http://jquery.com) for DOM manipulation API. 
+[ES5-shim](https://github.com/kriskowal/es5-shim) is used to polyfill ES5 support for older browsers and [JQuery](http://jquery.com) for DOM manipulation API. This is provided by the [es5-shim-rails](https://github.com/yourabi/es5-shim-rails) gem.
 
 ## Usage
 
